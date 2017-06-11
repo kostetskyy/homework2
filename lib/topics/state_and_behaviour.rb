@@ -7,7 +7,7 @@ module StateAndBehaviour
     attr_accessor :year, :color, :model, :current_speed
 
     def self.default_car
-      Car.new
+      self.new
     end
 
     def initialize(params)
@@ -53,8 +53,11 @@ module StateAndBehaviour
     end
 
     def push_break(speed)
-      return unless speed <= @current_speed
-      @current_speed -= speed
+      if speed > @current_speed
+        @current_speed
+      else
+        @current_speed -= speed
+      end
     end
   end
 end

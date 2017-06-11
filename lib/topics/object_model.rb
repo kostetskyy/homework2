@@ -12,12 +12,14 @@ module ObjectModel
       'Parent: allocate memory'
     end
   end
+
   # module LinuxFriendly
   module LinuxFriendly
     def fork_process
       super
     end
   end
+
   # class Laptop
   class Laptop < Parent
     prepend LinuxFriendly
